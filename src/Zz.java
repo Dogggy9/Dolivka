@@ -27,10 +27,6 @@ public class Zz {
         this.temperature = temperature;
     }
 
-    double getLitrs() {
-        return (getLevelDoliv() - getLevelNow()) / 5 * 0.21 * 112;
-    }
-
     private double getLevelDoliv() {
         return (getLevelMax() - (30 - getTemperature()) * 0.6);
     }
