@@ -31,7 +31,4 @@ public class Zz {
         return (getLevelMax() - (30 - getTemperature()) * 0.6);
     }
 
-    String display() {
-        return "При уровне " + getLevelNow() + "\nи температуре " + getTemperature() + "\nДоливаем до уровня " + getLevelDoliv();
-    }
 }
