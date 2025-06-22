@@ -1,6 +1,6 @@
 package model.config;
 
-public enum PlayerType {
+public enum ZakazX {
 
     ZAKAZ431,
 

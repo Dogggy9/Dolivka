@@ -1,4 +1,4 @@
-package component.zakazy;
+package model.zakazy;
 
 public class Zakaz832 {
 }

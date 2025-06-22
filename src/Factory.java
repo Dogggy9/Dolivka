@@ -1,32 +1,45 @@
+import component.AppOverHandler;
 import component.DataPrinter;
 import component.Dolivka;
 import component.UserInputReader;
+import component.config.CommandLineArgumentParser;
+import component.console.ConsoleAppOverHandler;
 import component.console.ConsoleDataPrinter;
 import component.console.ConsoleUserInputReader;
-import component.zakazy.Zakaz431;
-import component.zakazy.Zakaz832;
 import model.config.UserInterface;
+import model.config.ZakazX;
+
+import static model.config.UserInterface.GUI;
 
 public class Factory {
 
-    private final Zakaz431 zakaz431;
-
-    private final Zakaz832 zakaz832;
+    private final ZakazX zakazX;
 
     private final UserInterface userInterface;
 
-    public Factory(Zakaz431 zakaz431, Zakaz832 zakaz832, UserInterface userInterface) {
-        this.zakaz431 = zakaz431;
-        this.zakaz832 = zakaz832;
-        this.userInterface = userInterface;
+    public Factory(final String[] args) {
+        final CommandLineArgumentParser.CommandLineArguments commandLineArguments =
+                new CommandLineArgumentParser(args).parse();
+        zakazX = commandLineArguments.getZakazX();
+        userInterface = commandLineArguments.getUserInterface();
     }
 
     public Dolivka create() {
         final DataPrinter dataPrinter;
         final UserInputReader userInputReader;
+        final AppOverHandler appOverHandler;
+        if (userInterface == GUI) {
+//            final GameWindow gameWindow = new GameWindow();
+            dataPrinter = null;
+//            userInputReader = gameWindow;
+//            appOverHandler = gameWindow;
+        }else {
+            dataPrinter = new ConsoleDataPrinter();
+            userInputReader = new ConsoleUserInputReader();
+            appOverHandler = new ConsoleAppOverHandler(dataPrinter);
+        }
 
-        dataPrinter = new ConsoleDataPrinter();
-        userInputReader = new ConsoleUserInputReader();
-        return null;
+
+        return new Dolivka(dataPrinter, zakazX);
     }
 }

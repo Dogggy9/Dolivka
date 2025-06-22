@@ -1,4 +1,4 @@
-package component.zakazy;
+package model.zakazy;
 
 public class Zakaz431 implements Zakaz{
 
@@ -9,22 +9,7 @@ public class Zakaz431 implements Zakaz{
     double levelTopUp;
 
     @Override
-    public double getLevelNow() {
-        return 0;
-    }
-
-    @Override
-    public double getTemperature() {
-        return 0;
-    }
-
-    @Override
     public double getLevelMax() {
-        return 0;
-    }
-
-    @Override
-    public double setLevelMax() {
         return 0;
     }
 
