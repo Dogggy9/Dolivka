@@ -1,19 +1,24 @@
 package component;
 
 import model.config.ZakazX;
+import model.zakazy.Zakaz;
 
 public class Dolivka {
     private final DataPrinter dataPrinter;
+    private final UserInputReader userInputReader;
+    private final Zakaz zakaz;
 
-    private final ZakazX zakazX;
-
-    public Dolivka(DataPrinter dataPrinter, ZakazX zakazX) {
+    public Dolivka(DataPrinter dataPrinter, UserInputReader userInputReader, Zakaz zakaz) {
         this.dataPrinter = dataPrinter;
-        this.zakazX = zakazX;
+        this.userInputReader = userInputReader;
+        this.zakaz = zakaz;
     }
 
     public void start(){
 
-        dataPrinter.printInfoMessage("какой заказ");
+        dataPrinter.printInfoMessage("Сколько сейчас уровень? ");
+        double levelNow = userInputReader.digit();
+        dataPrinter.printInfoMessage("Сколько сейчас температура? ");
+        double temperaturNow = userInputReader.digit();
     }
 }

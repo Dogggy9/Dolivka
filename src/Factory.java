@@ -8,8 +8,13 @@ import component.console.ConsoleDataPrinter;
 import component.console.ConsoleUserInputReader;
 import model.config.UserInterface;
 import model.config.ZakazX;
+import model.zakazy.Zakaz;
+import model.zakazy.Zakaz431;
+import model.zakazy.Zakaz832;
 
 import static model.config.UserInterface.GUI;
+import static model.config.ZakazX.ZAKAZ431;
+import static model.config.ZakazX.ZAKAZ832;
 
 public class Factory {
 
@@ -30,16 +35,24 @@ public class Factory {
         final AppOverHandler appOverHandler;
         if (userInterface == GUI) {
 //            final GameWindow gameWindow = new GameWindow();
-            dataPrinter = null;
-//            userInputReader = gameWindow;
+            dataPrinter = null; // gameWindow
+            userInputReader = null; // gameWindow
 //            appOverHandler = gameWindow;
         }else {
             dataPrinter = new ConsoleDataPrinter();
             userInputReader = new ConsoleUserInputReader();
             appOverHandler = new ConsoleAppOverHandler(dataPrinter);
         }
+        final Zakaz zakaz;
+        if (zakazX == ZAKAZ431) {
+            zakaz = new Zakaz431();
+        } else if (zakazX == ZAKAZ832) {
+            zakaz = new Zakaz832();
+    } else {
+            zakaz = new Zakaz431();
+        }
 
 
-        return new Dolivka(dataPrinter, zakazX);
+        return new Dolivka(dataPrinter, userInputReader, zakaz);
     }
 }
