@@ -10,4 +10,9 @@ public class ConsoleUserInputReader implements UserInputReader {
     public double digit() {
         return new Scanner(System.in).nextDouble();
     }
+
+    @Override
+    public String str() {
+        return new Scanner(System.in).nextLine();
+    }
 }

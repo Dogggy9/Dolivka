@@ -37,7 +37,7 @@ public class Factory {
 //            final GameWindow gameWindow = new GameWindow();
             dataPrinter = null; // gameWindow
             userInputReader = null; // gameWindow
-//            appOverHandler = gameWindow;
+            appOverHandler = null; // gameWindow;
         }else {
             dataPrinter = new ConsoleDataPrinter();
             userInputReader = new ConsoleUserInputReader();
@@ -53,6 +53,9 @@ public class Factory {
         }
 
 
-        return new Dolivka(dataPrinter, userInputReader, zakaz);
+        return new Dolivka(dataPrinter,
+                userInputReader,
+                zakaz,
+                appOverHandler);
     }
 }
