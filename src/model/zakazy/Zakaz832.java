@@ -20,7 +20,7 @@ public class Zakaz832 implements Zakaz{
     }
 
     @Override
-    public double getTemperatureNominal() {
+    public double getTEMPERATURENOMINAL() {
         return temperatureNominal;
     }
 
@@ -32,7 +32,7 @@ public class Zakaz832 implements Zakaz{
         return temperatureNow;
     }
 
-    public double getLevelMin() {
+    public double getLEVELMIN() {
         return levelMin;
     }
 

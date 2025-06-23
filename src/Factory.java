@@ -34,10 +34,10 @@ public class Factory {
         final UserInputReader userInputReader;
         final AppOverHandler appOverHandler;
         if (userInterface == GUI) {
-//            final GameWindow gameWindow = new GameWindow();
-            dataPrinter = null; // gameWindow
-            userInputReader = null; // gameWindow
-            appOverHandler = null; // gameWindow;
+//            final AppWindow appWindow = new AppWindow();
+            dataPrinter = null; // appWindow
+            userInputReader = null; // appWindow
+            appOverHandler = null; // appWindow;
         }else {
             dataPrinter = new ConsoleDataPrinter();
             userInputReader = new ConsoleUserInputReader();

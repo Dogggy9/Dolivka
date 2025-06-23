@@ -6,13 +6,13 @@ public interface Zakaz {
 
     public double getLevelTopUp();
 
-    public double getTemperatureNominal();
+    public double getTEMPERATURENOMINAL();
 
     public double getLevelNow();
 
     public double getTemperatureNow();
 
-    public double getLevelMin();
+    public double getLEVELMIN();
 
     public void setLevelNow(double levelNow);
 

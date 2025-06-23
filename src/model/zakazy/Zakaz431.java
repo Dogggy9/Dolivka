@@ -4,8 +4,8 @@ public class Zakaz431 implements Zakaz{
 
     double levelNow;
     double temperatureNow;
-    double temperatureNominal = 30;
-    final double levelMin = 25;
+    double TEMPERATURENOMINAL = 30;
+    final double LEVELMIN = 25;
     final double LEVELMAX = 40;
     double levelTopUp;
 
@@ -20,8 +20,8 @@ public class Zakaz431 implements Zakaz{
     }
 
     @Override
-    public double getTemperatureNominal() {
-        return temperatureNominal;
+    public double getTEMPERATURENOMINAL() {
+        return TEMPERATURENOMINAL;
     }
 
     public double getLevelNow() {
@@ -32,8 +32,8 @@ public class Zakaz431 implements Zakaz{
         return temperatureNow;
     }
 
-    public double getLevelMin() {
-        return levelMin;
+    public double getLEVELMIN() {
+        return LEVELMIN;
     }
 
     public void setLevelNow(double levelNow) {
@@ -46,7 +46,7 @@ public class Zakaz431 implements Zakaz{
 
     @Override
     public double getLevelNado() {
-        return getLEVELMAX()-((getTemperatureNominal()-getTemperatureNow())/5*3);
+        return getLEVELMAX()-((getTEMPERATURENOMINAL()-getTemperatureNow())/5*3);
     }
 
     @Override
