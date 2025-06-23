@@ -16,7 +16,7 @@ import static model.config.ZakazX.ZAKAZ832;
 
 public class Factory {
 
-    private final ZakazX zakazX;
+    private ZakazX zakazX;
 
     private final UserInterface userInterface;
 
@@ -42,7 +42,12 @@ public class Factory {
             appOverHandler = new ConsoleAppOverHandler(dataPrinter);
         }
         final Zak zak;
-//        final Zakaz zakaz;
+        dataPrinter.printInfoMessage("zakaz? например zakaz832 по умолчанию 431");
+        String zakaz = userInputReader.str();
+        System.out.println(zakaz);
+        if (ZAKAZ431.name().equalsIgnoreCase(zakaz) || ZAKAZ832.name().equalsIgnoreCase(zakaz)){
+                zakazX = ZakazX.valueOf(zakaz.toUpperCase());
+        }
         if (zakazX == ZAKAZ431) {
             zak = new Zak431();
         } else if (zakazX == ZAKAZ832) {

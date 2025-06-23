@@ -4,7 +4,6 @@ public class Zak {
 
     private double levelNow;
     private double temperatureNow;
-    private final double TEMPERATURENOMINAL = 30;
 
     public double getLevelNow() {
         return levelNow;
@@ -23,7 +22,7 @@ public class Zak {
     }
 
     public double getTEMPERATURENOMINAL() {
-        return TEMPERATURENOMINAL;
+        return 30;
     }
 
     public double getLevelNado() {

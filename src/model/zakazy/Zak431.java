@@ -1,15 +1,13 @@
 package model.zakazy;
 
 public class Zak431 extends Zak{
-    private final double LEVELMIN = 25;
-    private final double LEVELMAX = 40;
 
     public double getLEVELMIN() {
-        return LEVELMIN;
+        return 25;
     }
 
     public double getLEVELMAX() {
-        return LEVELMAX;
+        return 40;
     }
 
     public double getLevelNado() {

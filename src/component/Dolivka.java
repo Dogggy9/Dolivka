@@ -1,19 +1,16 @@
 package component;
 
 import model.zakazy.Zak;
-import model.zakazy.Zakaz;
 
 public class Dolivka {
     private final DataPrinter dataPrinter;
     private final UserInputReader userInputReader;
-//    private final Zakaz zakaz;
     private final Zak zak;
     private final AppOverHandler appOverHandler;
 
     public Dolivka(DataPrinter dataPrinter, UserInputReader userInputReader, Zak zak, AppOverHandler appOverHandler) {
         this.dataPrinter = dataPrinter;
         this.userInputReader = userInputReader;
-//        this.zakaz = zakaz;
         this.zak = zak;
         this.appOverHandler = appOverHandler;
     }

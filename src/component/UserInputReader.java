@@ -1,6 +1,7 @@
 package component;
 
 public interface UserInputReader {
-    public double digit();
-    public String str();
+    double digit();
+    String str();
+    int zakaz();
 }

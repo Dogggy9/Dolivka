@@ -50,7 +50,7 @@ public class CommandLineArgumentParser {
 
     public static class CommandLineArguments{
         private final ZakazX zakazX;
-        private UserInterface userInterface;
+        private final UserInterface userInterface;
 
         public CommandLineArguments(ZakazX zakazX,
                                     UserInterface userInterface) {

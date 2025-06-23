@@ -15,4 +15,9 @@ public class ConsoleUserInputReader implements UserInputReader {
     public String str() {
         return new Scanner(System.in).nextLine();
     }
+
+    @Override
+    public int zakaz() {
+        return new Scanner(System.in).nextInt();
+    }
 }
