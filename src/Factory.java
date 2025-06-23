@@ -42,6 +42,7 @@ public class Factory {
             appOverHandler = new ConsoleAppOverHandler(dataPrinter);
         }
         final Zak zak;
+        assert dataPrinter != null;
         dataPrinter.printInfoMessage("zakaz? например zakaz832 по умолчанию 431");
         String zakaz = userInputReader.str();
         System.out.println(zakaz);
