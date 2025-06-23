@@ -8,9 +8,7 @@ import component.console.ConsoleDataPrinter;
 import component.console.ConsoleUserInputReader;
 import model.config.UserInterface;
 import model.config.ZakazX;
-import model.zakazy.Zakaz;
-import model.zakazy.Zakaz431;
-import model.zakazy.Zakaz832;
+import model.zakazy.*;
 
 import static model.config.UserInterface.GUI;
 import static model.config.ZakazX.ZAKAZ431;
@@ -43,19 +41,20 @@ public class Factory {
             userInputReader = new ConsoleUserInputReader();
             appOverHandler = new ConsoleAppOverHandler(dataPrinter);
         }
-        final Zakaz zakaz;
+        final Zak zak;
+//        final Zakaz zakaz;
         if (zakazX == ZAKAZ431) {
-            zakaz = new Zakaz431();
+            zak = new Zak431();
         } else if (zakazX == ZAKAZ832) {
-            zakaz = new Zakaz832();
+            zak = new Zak832();
     } else {
-            zakaz = new Zakaz431();
+            zak = new Zak431();
         }
 
 
         return new Dolivka(dataPrinter,
                 userInputReader,
-                zakaz,
+                zak,
                 appOverHandler);
     }
 }

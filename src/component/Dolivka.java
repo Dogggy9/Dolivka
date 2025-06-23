@@ -1,17 +1,20 @@
 package component;
 
+import model.zakazy.Zak;
 import model.zakazy.Zakaz;
 
 public class Dolivka {
     private final DataPrinter dataPrinter;
     private final UserInputReader userInputReader;
-    private final Zakaz zakaz;
+//    private final Zakaz zakaz;
+    private final Zak zak;
     private final AppOverHandler appOverHandler;
 
-    public Dolivka(DataPrinter dataPrinter, UserInputReader userInputReader, Zakaz zakaz, AppOverHandler appOverHandler) {
+    public Dolivka(DataPrinter dataPrinter, UserInputReader userInputReader, Zak zak, AppOverHandler appOverHandler) {
         this.dataPrinter = dataPrinter;
         this.userInputReader = userInputReader;
-        this.zakaz = zakaz;
+//        this.zakaz = zakaz;
+        this.zak = zak;
         this.appOverHandler = appOverHandler;
     }
 
@@ -19,12 +22,12 @@ public class Dolivka {
 
         while (true) {
             dataPrinter.printInfoMessage("Сколько сейчас уровень? ");
-            zakaz.setLevelNow(userInputReader.digit());
+            zak.setLevelNow(userInputReader.digit());
             dataPrinter.printInfoMessage("Сколько сейчас температура? ");
-            zakaz.setTemperatureNow(userInputReader.digit());
+            zak.setTemperatureNow(userInputReader.digit());
 
-            dataPrinter.printInfoMessage("доливаемся до уровня " + zakaz.getLevelNado());
-            dataPrinter.printInfoMessage("Надо литров " + zakaz.getLitrsNado());
+            dataPrinter.printInfoMessage("доливаемся до уровня " + zak.getLevelNado());
+            dataPrinter.printInfoMessage("Надо литров " + zak.getLitrsNado());
 
 
             dataPrinter.printInfoMessage("Исчо? ");
